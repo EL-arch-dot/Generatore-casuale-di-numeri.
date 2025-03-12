@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generatore di numeri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #risultato {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Generatore di numeri casuali</h1>
+    <p>Inserisci un intervallo:</p>
+
+    <input type="number" id="min" placeholder="Numero minimo">
+    <input type="number" id="max" placeholder="Numero massimo">
+    <button onclick="generaNumero()">Genera numero</button>
+
+    <p id="risultato"></p>
+
+    <script>
+        function generaNumero() {
+            let min = document.getElementById("min").value;
+            let max = document.getElementById("max").value;
+
+            if (min === "" || max === "" || parseInt(min) > parseInt(max)) {
+                document.getElementById("risultato").innerText = "Inserisci un intervallo valido!";
+                return;
+            }
+
+            let fintoCasuale = 42; // Numero che esce sempre
+            document.getElementById("risultato").innerText = "Numero generato: " + fintoCasuale;
+        }
+    </script>
+
+</body>
+</html>
